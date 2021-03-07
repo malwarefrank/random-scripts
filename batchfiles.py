@@ -49,7 +49,7 @@ def num_convert(nstr):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        "Read list of files from stdin and split into batches based on cumulative file size."
+        description="Read list of files from stdin and split into batches based on cumulative file size."
     )
     parser.add_argument(
         "--size", "-s", required=True, help="Maximum size of a batch (e.g. 1G)"
