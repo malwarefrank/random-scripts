@@ -1,0 +1,13 @@
+#cloud-config
+autoinstall:
+    version: 1
+    locale: en_US
+    keyboard:
+      layout: en
+      variant: us
+    identity:
+      hostname: baseimage
+      password: '$6$4.6Vg1.Ar$Umu4pZ2F4XMV1j1dQyv.aSgZl6VhbkJBZO7/D0JKK2mn4ymkByYcIWJg3Ndicb6SSMJrVxzN6zc2BmJWfSxET0'
+      username: admin
+    ssh:
+      install-server: yes
