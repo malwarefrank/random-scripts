@@ -44,6 +44,7 @@ source "virtualbox-iso" "focal-server" {
   ssh_port             = 22
   ssh_username         = "${var.sudo_user}"
   ssh_password         = "${var.sudo_password}"
+  ssh_handshake_attempts = 1000
   ssh_wait_timeout     = "10000s"
   vboxmanage           = [["modifyvm", "{{.Name}}", "--memory", "${var.memory}"], ["modifyvm", "{{.Name}}", "--cpus", "${var.cpus}"]]
   format               = "ova"
