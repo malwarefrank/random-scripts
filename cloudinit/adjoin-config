@@ -1,0 +1,44 @@
+#cloud-config
+autoinstall:
+    # https://ubuntu.com/server/docs/install/autoinstall-reference
+    version: 1
+    refresh-installer:
+        update: yes
+    identity:
+        hostname: domaincomp
+        # echo admin | mkpasswd -m sha-512
+        password: "$6$UXNudQn2PoQmU$.9nBmoNLIFpoj30WtsWvnAcY2hFwlQwUbFTknJ0UxkW6IF.NIcj7HMsnIdwnOTqHzyqdKQr9G8fNkpswwRzES0"
+        username: localadmin
+    packages:
+        - vim-nox
+        - screen
+        - tmux
+        # python
+        - virtualenvwrapper
+        - python3.9
+        - python3.9-venv
+        - python3-venv
+        # common usb and network filesystems
+        - exfat-utils
+        - libfsapfs-utils
+        - nfs-common
+        - smbclient
+        # unzip/zip common archive formats
+        - p7zip-full
+        - p7zip-rar
+        # desktop environment
+        - ubuntu-desktop
+        - terminator
+        - chromium-browser
+        # prep for domain join
+        # https://computingforgeeks.com/join-ubuntu-debian-to-active-directory-ad-domain/
+        - realmd
+        - libnss-sss
+        - libpam-sss
+        - sssd
+        - sssd-tools
+        - adcli
+        - samba-common-bin
+        - oddjob
+        - oddjob-mkhomedir
+        - packagekit
